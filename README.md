@@ -1,2 +1,2 @@
-# previs-o-do-tempo-estilo-EPTV
+# previsao-do-tempo-estilo-EPTV
 tela previsao do tempo padrao eptv
