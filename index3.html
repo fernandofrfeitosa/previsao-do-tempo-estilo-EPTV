@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperatura em Campinas, SP</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+   
+    <div id="weather_C"></div>
+    <div id="weather_F"></div>
+    <!--inserção de divs-->
+    <div class="container">
+        <div class="cidade"></div>
+        <div class="subtitulo"></div>
+             <!-- Aqui está a correção -->
+        <div class="fonte">Fonte: WHEATHER API</div>
+        <div class="min">Mín.</div>
+        <div class="max">Máx.</div>
+        <div class="preci">Precipitação</div>
+        <div class="dia_1"></div>
+        <div class="class_1">
+            <div class="imagem" id="imagem_1"></div>
+        </div>
+        <div class="min_1"></div>
+        <div class="max_1"></div>
+        <div class="preci_1"></div>
+        <div class="dia_2"></div>
+        <div class="class_2">
+            <div class="imagem" id="imagem_2"></div>
+        </div>
+        <div class="min_2"></div>
+        <div class="max_2"></div>
+        <div class="preci_2"></div>
+        <div class="dia_3"></div>
+        <div class="class_3">
+            <div class="imagem" id="imagem_3"></div>
+        </div>
+        <div class="min_3"></div>
+        <div class="max_3"></div>
+        <div class="preci_3"></div>
+        <div class="dia_4"></div>
+        <div class="class_4">
+            <div class="imagem" id="imagem_4"></div>
+        </div>
+        <div class="min_4"></div>
+        <div class="max_4"></div>
+        <div class="preci_4"></div>
+        <div class="footer"> design by Fernando Fausto</div>
+      </div>
+
+
+      <script>
+        const apiKey = '8bbb8da1a45e44b78e3183942241502';
+        const city = 'CAMPINAS';
+        const state = 'SP';
+        const apiUrl = `https://api.weatherapi.com/v1/forecast.json?key=${apiKey}&q=${city},${state}&days=5`;
+        const subtitulo = 'PREVISÃO DO TEMPO';
+
+        function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+
+    
+}
+
+
+function formatNumber(num) {
+  // Adiciona zeros à esquerda se o número tiver apenas um dígito
+  return `${num.toString().padStart(2, '0')}`;
+}
+
+
+        fetch(apiUrl)
+            .then(response => response.json())
+            .then(data => {
+
+
+                // Loop através dos próximos 4 dias
+                for (let i = 1; i <=4; i++) {
+
+
+                    const dayData = data.forecast.forecastday[i];
+                    const date = new Date(dayData.date);
+                    const weekday = date.toLocaleDateString('pt-BR', { weekday: 'long' }).replace('-feira', '');
+                    const minTemp = dayData.day.mintemp_c;
+                    const maxTemp = dayData.day.maxtemp_c;
+                    const precipitation = dayData.day.totalprecip_mm;
+                    const minTempInt = Math.floor(minTemp);
+                    const maxTempInt = Math.floor(maxTemp);
+                    const precipitationInt =Math.floor(precipitation);
+                    const capitalizedWeekday = capitalizeFirstLetter(weekday);
+                    const formattedPrecipitation = formatNumber(precipitationInt);
+                    const condition = dayData.day.condition;
+                    const iconUrl = `https:${condition.icon}`;
+                    
+                    
+                    // Atualiza os elementos HTML com os dados
+                    document.querySelector(`.dia_${i}`).innerHTML = `${capitalizedWeekday}`;
+                    document.querySelector(`.min_${i}`).innerHTML = `${minTempInt}°`;
+                    document.querySelector(`.max_${i}`).innerHTML = `${maxTempInt}°`;
+                    document.querySelector(`.preci_${i}`).innerHTML = `${formattedPrecipitation}mm`;
+                   // tentativa para mostrar imagem do forescast
+                   const imageElement = document.createElement('img');
+                   imageElement.src = iconUrl;
+                   document.getElementById(`imagem_${i}`).appendChild(imageElement);
+                   
+                }
+                 document.querySelector(`.cidade`).innerHTML = `${city}`;
+                 document.querySelector(`.subtitulo`).innerHTML = `${subtitulo}`;
+            })
+            .catch(error => {
+                console.error('Erro ao obter a previsão do tempo:', error);
+                document.querySelector('.footer').innerHTML = 'Erro ao obter a previsão do tempo. Por favor, tente novamente mais tarde.';
+            });
+    </script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+
+
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+
+.container {  
+    font-family: 'Mulish';
+    color: rgb(18, 29, 61);
+    display: grid;
+    grid-template-columns: 6.5fr 2fr 1.6fr 1.6fr 3.8fr;
+    grid-template-rows: 1.7fr 0.8fr 1.2fr 1.2fr 1.2fr 1.2fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+        "cidade cidade cidade cidade cidade"
+        "fonte fonte min max preci"
+        "dia_1 class_1 min_1 max_1 preci_1"
+        "dia_2 class_2 min_2 max_2 preci_2"
+        "dia_3 class_3 min_3 max_3 preci_3"
+        "dia_4 class_4 min_4 max_4 preci_4"
+        "footer footer footer footer footer";
+        height: 100vh;
+        position: relative;
+}
+
+.cidade { 
+    grid-area: cidade;
+    background-color: rgb(245, 248, 255);
+    font-weight: 750;
+    font-size: 60px;
+    padding-left: 40px;
+}
+.subtitulo{
+    background-color: rgb(245, 248, 255);
+    font-weight: 550;
+    font-size: 50px;
+    position: absolute;
+    margin-top: 60px;
+    margin-left: 45px ;
+    
+}
+
+.fonte { 
+    grid-area: fonte;
+    background-color: rgb(245, 248, 255);
+    padding-left: 40px;
+    border-bottom: 2px solid #000;
+    
+    
+}
+
+.min {
+    grid-area: min;
+    background-color: rgb(245, 248, 255);
+    font-weight: 550;
+    font-size: 50px;
+    border-bottom: 2px solid #000;
+
+}
+
+.max {
+    grid-area: max; 
+    background-color: rgb(245, 248, 255);
+    font-weight: 550;
+    font-size: 50px;
+    border-bottom: 2px solid #000;
+}
+
+.preci { 
+    grid-area: preci;
+    background-color: rgb(245, 248, 255);
+    font-weight: 550;
+    font-size: 40px;
+    margin-top: 10px;
+    border-bottom: 2px solid #000;
+}
+
+.dia_1 { 
+    grid-area: dia_1;
+    background-color: rgb(146, 176, 247);
+    font-size: 60px;
+    padding-left: 40px;
+    border-bottom: 2px solid #000;
+}
+
+.class_1 { 
+    grid-area: class_1;
+    background-color: rgb(146, 176, 247);
+    border-bottom: 2px solid #000;
+    padding-top: 5px;
+   
+}
+
+.min_1 { 
+    grid-area: min_1;
+    background-color: rgb(171, 190, 235);
+    font-weight: 550;
+    font-size: 50px;
+    border-bottom: 2px solid #000;
+}
+
+.max_1 { 
+    grid-area: max_1;
+    background-color: rgb(187, 193, 207);
+    font-weight: 550;
+    font-size: 50px;
+     border-bottom: 2px solid #000;
+}
+
+.preci_1 { 
+    grid-area: preci_1; 
+    background-color: rgb(245, 248, 255);
+    font-weight: 550;
+    font-size: 40px;
+    margin-top: 10px;
+    border-bottom: 2px solid #000;
+   
+}
+
+.dia_2 { 
+    grid-area: dia_2;
+    background-color: rgb(146, 176, 247);
+    font-size: 60px;
+    padding-left: 40px;
+    border-bottom: 2px solid #000;
+}
+
+.class_2 { 
+    grid-area: class_2;
+    background-color: rgb(146, 176, 247);
+    border-bottom: 2px solid #000;
+}
+
+.min_2 { 
+    grid-area: min_2;
+    background-color: rgb(171, 190, 235);
+    font-weight: 550;
+    font-size: 50px;
+    border-bottom: 2px solid #000;
+}
+
+.max_2 { 
+    grid-area: max_2;
+    background-color: rgb(187, 193, 207);
+    font-weight: 550;
+    font-size: 50px;
+     border-bottom: 2px solid #000;
+}
+
+.preci_2 { 
+    grid-area: preci_2; 
+    background-color: rgb(245, 248, 255);
+    font-weight: 550;
+    font-size: 40px;
+    margin-top: 10px;
+    border-bottom: 2px solid #000;
+}
+
+.dia_3 { 
+    grid-area: dia_3;
+    background-color: rgb(146, 176, 247);
+    font-size: 60px;
+    padding-left: 40px;
+    border-bottom: 2px solid #000;
+}
+
+.class_3 { 
+    grid-area: class_3;
+    background-color: rgb(146, 176, 247);
+    border-bottom: 2px solid #000;
+}
+
+.min_3 { 
+    grid-area: min_3;
+    background-color: rgb(171, 190, 235);
+    font-weight: 550;
+    font-size: 50px;
+    border-bottom: 2px solid #000;
+}
+
+.max_3 { 
+    grid-area: max_3;
+    background-color: rgb(187, 193, 207);
+    font-weight: 550;
+    font-size: 50px;
+    border-bottom: 2px solid #000;
+}
+
+.preci_3 { 
+    grid-area: preci_3; 
+    background-color: rgb(245, 248, 255);
+    font-weight: 550;
+    font-size: 40px;
+    margin-top: 10px;
+    border-bottom: 2px solid #000;
+}
+
+.dia_4  { 
+    grid-area: dia_4;
+    background-color: rgb(146, 176, 247);
+    font-size: 60px;
+    padding-left: 40px;
+    border-bottom: 2px solid #000;
+}
+
+.class_4 { 
+    grid-area: class_4;
+    background-color: rgb(146, 176, 247);
+    border-bottom: 2px solid #000;
+    
+   
+   
+   
+}
+
+.min_4 { 
+    grid-area: min_4;
+    background-color: rgb(171, 190, 235);
+    font-weight: 550;
+    font-size: 50px;
+    border-bottom: 2px solid #000;
+}
+
+.max_4 { 
+    grid-area: max_4;
+    background-color: rgb(187, 193, 207);
+    font-weight: 550;
+    font-size: 50px;
+    border-bottom: 2px solid #000;
+}
+
+.preci_4 { 
+    grid-area: preci_4; 
+    background-color: rgb(245, 248, 255);
+    font-weight: 550;
+    font-size: 40px;
+    text-justify: auto;
+    margin-top: 10px;
+    border-bottom: 2px solid #000;
+}
+
+.footer { 
+    grid-area: footer;
+    background-color: rgb(245, 248, 255);
+    
+}
+.imagem{
+    width: 10px; /* Defina o tamanho desejado */
+    height: auto; /* Mantém a proporção da imagem */
+    transform: scale(1.5); 
+   
+    
+}
